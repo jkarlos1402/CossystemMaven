@@ -1,0 +1,245 @@
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+        <property name="connection.url">jdbc:sqlserver://localhost\SQLEXPRESS:1433;databaseName=CosAdminV11</property>
+        <property name="connection.username">usuario1</property>
+        <property name="connection.password">usuario1</property>
+
+
+        <!--        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/cosadminv11</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>      -->
+
+
+        <!--        <property name="connection.driver_class">net.ucanaccess.jdbc.UcanaccessDriver</property>
+        <property name="connection.url">jdbc:ucanaccess://C:/Cossystem/CosAdminV11.mdb</property>          -->
+
+
+        <!--        <property name="hibernate.session_factory_name">sessionFactory</property>
+        <property name="hibernate.connection.datasource">jdbc/CossystemDataSource</property>-->
+
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServer2012Dialect</property>
+
+        <!--<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>-->
+
+        <!--<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>-->
+
+        <property name="hibernate.jdbc.batch_size">100</property>
+        <property name="show_sql">false</property>
+        <property name="format_sql">false</property>
+        <property name="current_session_context_class">thread</property>
+        <property name="hibernate.cache.use_second_level_cache">false</property>
+
+        <mapping class="com.cossystem.core.pojos.TblAccesoPantallas" />
+        <mapping class="com.cossystem.core.pojos.TblAccesoPantallasArchivos" />
+        <mapping class="com.cossystem.core.pojos.TblAccesoRegistro" />
+        <mapping class="com.cossystem.core.pojos.TblAccesoTipoUsuario" />
+        <mapping class="com.cossystem.core.pojos.TblAccesoUsuarioPantallas" />
+        <mapping class="com.cossystem.core.pojos.TblAccesoUsuarioPantallasOperaciones" />
+        <mapping class="com.cossystem.core.pojos.TblAccesoPantallasCampos" />
+
+        <mapping class="com.cossystem.core.pojos.TblARTICULO" />
+        <mapping class="com.cossystem.core.pojos.TblARTICULOALMACENAJE" />
+        <mapping class="com.cossystem.core.pojos.TblARTICULOARCHIVOS" />
+        <mapping class="com.cossystem.core.pojos.TblARTICULOATRIBUTOS" />
+        <mapping class="com.cossystem.core.pojos.TblARTICULOCARACTERISTICAS" />
+        <mapping class="com.cossystem.core.pojos.TblARTICULOCLIENTE" />
+        <mapping class="com.cossystem.core.pojos.TblARTICULOCOMPETENCIA" />
+        <mapping class="com.cossystem.core.pojos.TblARTICULOCONTABILIDAD" />
+        <mapping class="com.cossystem.core.pojos.TblARTICULOCOSTOS" />
+        <mapping class="com.cossystem.core.pojos.TblARTICULODESVENTAJA" />
+        <mapping class="com.cossystem.core.pojos.TblARTICULOESPECIFICACIONES" />
+        <mapping class="com.cossystem.core.pojos.TblARTICULOEXISTENCIA" />
+        <mapping class="com.cossystem.core.pojos.TblARTICULOEXISTENCIAALMACEN" />
+        <mapping class="com.cossystem.core.pojos.TblARTICULOFOTOS" />
+        <mapping class="com.cossystem.core.pojos.TblARTICULOKIT" />
+        <mapping class="com.cossystem.core.pojos.TblARTICULOKITDET" />
+        <mapping class="com.cossystem.core.pojos.TblARTICULOKITRUTA" />
+        <mapping class="com.cossystem.core.pojos.TblARTICULOOBJECIONES" />
+        <mapping class="com.cossystem.core.pojos.TblARTICULOOPINIONES" />
+        <mapping class="com.cossystem.core.pojos.TblARTICULOPRECIOVENTA" />
+        <mapping class="com.cossystem.core.pojos.TblARTICULOPROVEEDOR" />
+        <mapping class="com.cossystem.core.pojos.TblARTICULOSIMILAR" />
+        <mapping class="com.cossystem.core.pojos.TblARTICULOVENTAJA" />
+
+        <mapping class="com.cossystem.core.pojos.TblCAMPANA" />
+        <mapping class="com.cossystem.core.pojos.TblCAMPANAADJUNTOS" />
+        <mapping class="com.cossystem.core.pojos.TblCAMPANACAMBACEO" />
+        <mapping class="com.cossystem.core.pojos.TblCAMPANACORREOS" />
+        <mapping class="com.cossystem.core.pojos.TblCAMPANAGUION" />
+        <mapping class="com.cossystem.core.pojos.TblCAMPANAINTERNET" />
+        <mapping class="com.cossystem.core.pojos.TblCAMPANAOBJECION" />
+        <mapping class="com.cossystem.core.pojos.TblCAMPANASTATUS" />
+        <mapping class="com.cossystem.core.pojos.TblCAMPANASTATUSLLAMADA" />
+        <mapping class="com.cossystem.core.pojos.TblCAMPANATIPOOBJECION" />
+
+        <mapping class="com.cossystem.core.pojos.CatAccesoPantallaOperacion" />
+        <mapping class="com.cossystem.core.pojos.CatActividadStatus"/>
+        <mapping class="com.cossystem.core.pojos.CatArea"/>
+        <mapping class="com.cossystem.core.pojos.CatCPCOLONIA"/>
+        <mapping class="com.cossystem.core.pojos.CatCPDELEGACION"/>
+        <mapping class="com.cossystem.core.pojos.CatCPESTADO"/>
+        <mapping class="com.cossystem.core.pojos.CatCPTITULOESTADISTICA"/>
+        <mapping class="com.cossystem.core.pojos.CatCPTITULOESTADISTICADET"/>
+        <mapping class="com.cossystem.core.pojos.CatDivisa"/>
+        <mapping class="com.cossystem.core.pojos.CatMarca"/>
+        <mapping class="com.cossystem.core.pojos.CatPac"/>
+        <mapping class="com.cossystem.core.pojos.CatParentesco"/>
+        <mapping class="com.cossystem.core.pojos.CatProspectoOrigen"/>
+        <mapping class="com.cossystem.core.pojos.CatProspectoPuestos"/>
+        <mapping class="com.cossystem.core.pojos.CatProspectoStatus"/>
+        <mapping class="com.cossystem.core.pojos.CatRegionGeografica"/>
+        <mapping class="com.cossystem.core.pojos.CatServidoresCorreo"/>
+        <mapping class="com.cossystem.core.pojos.CatSexo"/>
+        <mapping class="com.cossystem.core.pojos.CatTipoFacturacion"/>
+        <mapping class="com.cossystem.core.pojos.CatTipoIncidencias"/>
+        <mapping class="com.cossystem.core.pojos.CatTipoSolicitudGastos"/>
+        <mapping class="com.cossystem.core.pojos.Conftablajson"/>
+        <mapping class="com.cossystem.core.pojos.CatUsuarios"/>
+        <mapping class="com.cossystem.core.pojos.CatEmpStatus"/>
+        <mapping class="com.cossystem.core.pojos.CatEmpOrigen"/>
+        <mapping class="com.cossystem.core.pojos.CatDepartamento"/>
+        <mapping class="com.cossystem.core.pojos.CatUbicacion"/>
+        <mapping class="com.cossystem.core.pojos.CatEmpPuestos"/>
+        <mapping class="com.cossystem.core.pojos.CatEmpNivel"/>
+        <mapping class="com.cossystem.core.pojos.CatTipoConexion"/>
+        <mapping class="com.cossystem.core.pojos.CatCECO"/>
+        <mapping class="com.cossystem.core.pojos.CatStatus"/>
+        <mapping class="com.cossystem.core.pojos.TblConfiguracionCossAdmin"/>
+
+        <mapping class="com.cossystem.core.pojos.TblChatBienvenida" />
+        <mapping class="com.cossystem.core.pojos.TblChatDia" />
+        <mapping class="com.cossystem.core.pojos.TblChatMensajes" />
+        <mapping class="com.cossystem.core.pojos.TblChatSala" />
+
+        <mapping class="com.cossystem.core.pojos.TblCLIENTE" />
+        <mapping class="com.cossystem.core.pojos.TblCLIENTEADMON" />
+        <mapping class="com.cossystem.core.pojos.TblCLIENTEALERTA" />
+        <mapping class="com.cossystem.core.pojos.TblCLIENTEARCHIVO" />
+        <mapping class="com.cossystem.core.pojos.TblCLIENTEARTICULOCOMPRA" />
+        <mapping class="com.cossystem.core.pojos.TblCLIENTEARTICULOVENDE" />
+        <mapping class="com.cossystem.core.pojos.TblCLIENTEARTICULOVENDIDOS" />
+        <mapping class="com.cossystem.core.pojos.TblCLIENTEBANCOS" />
+        <mapping class="com.cossystem.core.pojos.TblCLIENTECARACTERISTICAS" />
+        <mapping class="com.cossystem.core.pojos.TblCLIENTECLIENTE" />
+        <mapping class="com.cossystem.core.pojos.TblCLIENTECONTACTO" />
+        <mapping class="com.cossystem.core.pojos.TblCLIENTEDIRECCION" />
+        <mapping class="com.cossystem.core.pojos.TblCLIENTEDOCUMENTOS" />
+        <mapping class="com.cossystem.core.pojos.TblCLIENTEGEOGRAFICO" />
+        <mapping class="com.cossystem.core.pojos.TblCLIENTEINCIDENCIAS" />
+        <mapping class="com.cossystem.core.pojos.TblCLIENTEINDICADORES" />
+        <mapping class="com.cossystem.core.pojos.TblCLIENTELLAMADA" />
+        <mapping class="com.cossystem.core.pojos.TblCLIENTENOTAS" />
+        <mapping class="com.cossystem.core.pojos.TblCLIENTEOPORTUNIDAD" />
+        <mapping class="com.cossystem.core.pojos.TblCLIENTEPROVEEDORES" />
+        <mapping class="com.cossystem.core.pojos.TblCLIENTEREFERENCIAS" />
+        <mapping class="com.cossystem.core.pojos.TblCLIENTETICKETS" />
+
+        <mapping class="com.cossystem.core.pojos.TblEmpleados" />
+        <mapping class="com.cossystem.core.pojos.TblEmpleadosArchivosAdjuntos" />
+        <mapping class="com.cossystem.core.pojos.TblEmpleadosBancos" />
+        <mapping class="com.cossystem.core.pojos.TblEmpleadosCaracteristicas" />
+        <mapping class="com.cossystem.core.pojos.TblEmpleadosCliente" />
+        <mapping class="com.cossystem.core.pojos.TblEmpleadosClienteDet" />
+        <mapping class="com.cossystem.core.pojos.TblEmpleadosDIRECCION" />
+        <mapping class="com.cossystem.core.pojos.TblEmpleadosDatosFamiliares" />
+        <mapping class="com.cossystem.core.pojos.TblEmpleadosDatosLaborales" />
+        <mapping class="com.cossystem.core.pojos.TblEmpleadosDiarioActividad" />
+        <mapping class="com.cossystem.core.pojos.TblEmpleadosDiarioActividadDet" />
+        <mapping class="com.cossystem.core.pojos.TblEmpleadosEquipo" />
+        <mapping class="com.cossystem.core.pojos.TblEmpleadosEscolaridad" />
+        <mapping class="com.cossystem.core.pojos.TblEmpleadosExperienciaPerfil" />
+        <mapping class="com.cossystem.core.pojos.TblEmpleadosFotos" />
+        <mapping class="com.cossystem.core.pojos.TblEmpleadosGEOGRAFICO" />
+        <mapping class="com.cossystem.core.pojos.TblEmpleadosIncidencias" />
+        <mapping class="com.cossystem.core.pojos.TblEmpleadosNomina" />
+        <mapping class="com.cossystem.core.pojos.TblEmpleadosNominaDet" />
+        <mapping class="com.cossystem.core.pojos.TblEmpleadosProspectos" />
+        <mapping class="com.cossystem.core.pojos.TblEmpleadosProyectos" />
+        <mapping class="com.cossystem.core.pojos.TblEmpleadosRedesSociales" />
+        <mapping class="com.cossystem.core.pojos.TblEmpleadosReferenciasIncidencias" />
+        <mapping class="com.cossystem.core.pojos.TblEmpleadosReferenciasLaboral" />
+        <mapping class="com.cossystem.core.pojos.TblEmpleadosReferenciasPersonales" />
+
+        <mapping class="com.cossystem.core.pojos.UvwEmpleados" />
+
+        <mapping class="com.cossystem.core.pojos.TblEmpresa"/>
+        <mapping class="com.cossystem.core.pojos.TblEmpresaArchivos"/>
+        <mapping class="com.cossystem.core.pojos.TblEmpresaAutorizan"/>
+        <mapping class="com.cossystem.core.pojos.TblEmpresaBancos"/>
+        <mapping class="com.cossystem.core.pojos.TblEmpresaCaracteristicas"/>
+        <mapping class="com.cossystem.core.pojos.TblEmpresaCobrador"/>
+        <mapping class="com.cossystem.core.pojos.TblEmpresaConfiguracion"/>
+        <mapping class="com.cossystem.core.pojos.TblEmpresaConfiguracionEnvioCorreo"/>
+        <mapping class="com.cossystem.core.pojos.TblEmpresaConfiguracionPortal"/>
+        <mapping class="com.cossystem.core.pojos.TblEmpresaContrasenas"/>
+        <mapping class="com.cossystem.core.pojos.TblEmpresaCorreos"/>
+        <mapping class="com.cossystem.core.pojos.TblEmpresaCostos"/>
+        <mapping class="com.cossystem.core.pojos.TblEmpresaDirEntrega"/>
+        <mapping class="com.cossystem.core.pojos.TblEmpresaFiscal"/>
+        <mapping class="com.cossystem.core.pojos.TblEmpresaFoliosFiscales"/>
+        <mapping class="com.cossystem.core.pojos.TblEmpresaGEOGRAFICO"/>
+        <mapping class="com.cossystem.core.pojos.TblEmpresaInformacionAdicional"/>
+        <mapping class="com.cossystem.core.pojos.TblEmpresaLugarExpedicion"/>
+        <mapping class="com.cossystem.core.pojos.TblEmpresaOrganigrama"/>
+        <mapping class="com.cossystem.core.pojos.TblEmpresaPac"/>
+        <mapping class="com.cossystem.core.pojos.TblEmpresaPosicion"/>
+        <mapping class="com.cossystem.core.pojos.TblEmpresaProyectos"/>
+        <mapping class="com.cossystem.core.pojos.TblEmpresaReportes"/>
+        <mapping class="com.cossystem.core.pojos.TblEmpresaVendedores"/>
+
+        <mapping class="com.cossystem.core.pojos.TblPROSPECTO" />
+        <mapping class="com.cossystem.core.pojos.TblPROSPECTOALERTA" />
+        <mapping class="com.cossystem.core.pojos.TblPROSPECTOARCHIVO" />
+        <mapping class="com.cossystem.core.pojos.TblPROSPECTOARTICULOCOMPRA" />
+        <mapping class="com.cossystem.core.pojos.TblPROSPECTOARTICULOVENDE" />
+        <mapping class="com.cossystem.core.pojos.TblPROSPECTOCARACTERISTICAS" />
+        <mapping class="com.cossystem.core.pojos.TblPROSPECTOCLIENTES" />
+        <mapping class="com.cossystem.core.pojos.TblPROSPECTOCONTACTO" />
+        <mapping class="com.cossystem.core.pojos.TblPROSPECTODIRECCION" />
+        <mapping class="com.cossystem.core.pojos.TblPROSPECTOGEOGRAFICO" />
+        <mapping class="com.cossystem.core.pojos.TblPROSPECTOLLAMADA" />
+        <mapping class="com.cossystem.core.pojos.TblPROSPECTONOTAS" />
+        <mapping class="com.cossystem.core.pojos.TblPROSPECTOOPORTUNIDAD" />
+        <mapping class="com.cossystem.core.pojos.TblPROSPECTOPROVEEDORES" />
+        <mapping class="com.cossystem.core.pojos.TblPROSPECTOREFERENCIAS" />
+        <mapping class="com.cossystem.core.pojos.TblPROSPECTOSSTATUS" />
+
+        <mapping class="com.cossystem.core.pojos.TblPROVEEDOR" />
+        <mapping class="com.cossystem.core.pojos.TblPROVEEDORADMON" />
+        <mapping class="com.cossystem.core.pojos.TblPROVEEDORALERTA" />
+        <mapping class="com.cossystem.core.pojos.TblPROVEEDORARCHIVO" />
+        <mapping class="com.cossystem.core.pojos.TblPROVEEDORARTICULOCOMPRA" />
+        <mapping class="com.cossystem.core.pojos.TblPROVEEDORARTICULOVENDE" />
+        <mapping class="com.cossystem.core.pojos.TblPROVEEDORARTICULOVENDIDOS" />
+        <mapping class="com.cossystem.core.pojos.TblPROVEEDORBANCOS" />
+        <mapping class="com.cossystem.core.pojos.TblPROVEEDORCARACTERISTICAS" />
+        <mapping class="com.cossystem.core.pojos.TblPROVEEDORCLIENTES" />
+        <mapping class="com.cossystem.core.pojos.TblPROVEEDORCONTACTO" />
+        <mapping class="com.cossystem.core.pojos.TblPROVEEDORDIRECCION" />
+        <mapping class="com.cossystem.core.pojos.TblPROVEEDORDOCUMENTOS" />
+        <mapping class="com.cossystem.core.pojos.TblPROVEEDORLLAMADA" />
+        <mapping class="com.cossystem.core.pojos.TblPROVEEDORNOTAS" />
+        <mapping class="com.cossystem.core.pojos.TblPROVEEDOROPORTUNIDAD" />
+        <mapping class="com.cossystem.core.pojos.TblPROVEEDORPROVEEDORES" />
+        <mapping class="com.cossystem.core.pojos.TblPROVEEDORREFERENCIAS" />
+
+        <mapping class="com.cossystem.core.pojos.TblSOLGASTOSDET" />
+        <mapping class="com.cossystem.core.pojos.TblSOLGASTOSENC" />
+        <mapping class="com.cossystem.core.pojos.TblSOLGASTOSENCARCHIVO" />
+
+        <mapping class="com.cossystem.core.pojos.TblTicketEventos" />
+        <mapping class="com.cossystem.core.pojos.TblTicketPrioridad" />
+        <mapping class="com.cossystem.core.pojos.TblTicketRevision" />
+        <mapping class="com.cossystem.core.pojos.TblTicketStatus" />
+        <mapping class="com.cossystem.core.pojos.TblTicketTipo" />
+        <mapping class="com.cossystem.core.pojos.TblTickets" />
+        <mapping class="com.cossystem.core.pojos.TblTicketsOrigen" />
+        <mapping class="com.cossystem.core.pojos.TblTicketsSolucion" />
+        <mapping class="com.cossystem.core.pojos.TblTicketsSolucionRespuesta" />
+
+
+    </session-factory>
+</hibernate-configuration>
