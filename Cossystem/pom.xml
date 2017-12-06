@@ -26,9 +26,84 @@
 	</build>
 	<dependencies>
 		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-web-api</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-impl</artifactId>
+			<version>2.2.14</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
 			<groupId>com.crystalreports</groupId>
 			<artifactId>crystal-maven</artifactId>
 			<version>1.0</version>
 		</dependency>
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>6.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.3.11.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.14</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.14</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-scratchpad</artifactId>
+			<version>3.14</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+			<version>6.3.5.jre8-preview</version>
+		</dependency>
+		<dependency>
+			<groupId>com.coslibrary</groupId>
+			<artifactId>CosLibrary</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
+	<repositories>
+		<repository>
+			<id>mvnrepository</id>
+			<name>url mvnrepository</name>
+			<url>https://mvnrepository.com/artifact/javax/javaee-web-api</url>
+		</repository>
+		<repository>
+			<id>gsonmvnrepository</id>
+			<name>gson mvnrepository</name>
+			<url>https://mvnrepository.com/artifact/com.google.code.gson/gson</url>
+		</repository>
+		<repository>
+			<id>sqlmvnrepository</id>
+			<name>sql mvnrepository</name>
+			<url>https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc</url>
+		</repository>
+	</repositories>
 </project>

@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Cos Admin</title>
+        <h:outputStylesheet name="css/estilosGenerales.css"  />
+    </h:head>
+    <h:body>
+        <p:dialog id="dialogLogin" styleClass="dialogLogin" appendTo="@(body)" resizable="false" closeOnEscape="false" modal="true" responsive="true" header="Iniciar sesi&oacute;n" closable="false" visible="true" draggable="false">
+            <h:form id="formLogin">
+                <p:growl/>
+                <h:panelGrid columns="1" cellspacing="10">
+                    <p:outputLabel value="Usuario: " styleClass="labelLogin"/>
+                    <p:inputText required="true" styleClass="inputLogin" value="#{loginBean.user}" requiredMessage="Ingrese usuario"/>
+
+                    <p:outputLabel value="Empresa: " styleClass="labelLogin"/>
+                    <h:selectOneMenu required="true" styleClass="inputLogin" value="#{loginBean.empresa}" converter="genericConverter" requiredMessage="Seleccione empresa">
+                        <f:selectItem itemValue="" itemLabel="Seleccione"/>
+                        <f:selectItems value="#{loginBean.catEmpresas}" var="empresaLogin" itemLabel="#{empresaLogin.empRazonSocial}" />
+                    </h:selectOneMenu>
+
+                    <p:outputLabel value="Contrase&ntilde;a: " styleClass="labelLogin"/>
+                    <p:inputText required="true" type="password" styleClass="inputLogin" value="#{loginBean.password}" requiredMessage="Ingrese contrase&ntilde;a"/>
+
+                    <f:facet name="footer">
+                        <p:commandButton id="btnEntrar" value="Ingresar" action="#{loginBean.logIn}" update=":formLogin"/>
+                    </f:facet>
+                    <p:blockUI block="formLogin" trigger="btnEntrar" animate="true" styleClass ="blockLogin">                        
+                        <h:panelGrid columns="1">
+                            <p:graphicImage value="imagenes/load3.gif" width="50%" style="background: transparent;"/>
+                            <h:outputText value="Cargando..."/>
+                        </h:panelGrid>
+                    </p:blockUI>
+                </h:panelGrid>
+            </h:form>
+        </p:dialog>
+    </h:body>
+</html>
+
