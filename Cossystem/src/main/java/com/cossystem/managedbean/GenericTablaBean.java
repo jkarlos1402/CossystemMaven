@@ -45,7 +45,12 @@ import org.primefaces.model.StreamedContent;
 
 public class GenericTablaBean implements Serializable {
 
-    protected StreamedContent fileExcel;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	protected StreamedContent fileExcel;
     protected String nombreArchivo;
 
     protected List<TblAccesoPantallasCampos> configuracionPantalla;
@@ -55,10 +60,10 @@ public class GenericTablaBean implements Serializable {
 
     protected Integer idElementoSeleccionado;
     protected Object elementoSeleccionado;
-    protected Class claseElemento;
-    protected Class claseElementoDAO;
-    protected Class claseElementoTransaccional;
-    protected Class claseElementoTransaccionalDAO;
+    protected Class<?> claseElemento;
+    protected Class<?> claseElementoDAO;
+    protected Class<?> claseElementoTransaccional;
+    protected Class<?> claseElementoTransaccionalDAO;
     protected Field campoIdElemento;
     protected Field campoIdElementoTransaccional;
     protected Integer idTablaEntidad = null;
@@ -79,7 +84,7 @@ public class GenericTablaBean implements Serializable {
     @PostConstruct
     public void init() {
         ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
-        Map parametros = externalContext.getRequestParameterMap();
+        Map<String, String> parametros = externalContext.getRequestParameterMap();
         Properties propiedades;
         try {
             propiedades = Propiedades.obtienePropiedades();
@@ -123,7 +128,8 @@ public class GenericTablaBean implements Serializable {
                     }
                 }
                 if (configuracionPantallaTransaccional != null && !configuracionPantallaTransaccional.isEmpty() && !configuracionPantallaTransaccional.equals(configuracionPantalla)) {
-                    String nombreClase = Configuracion.buscaNombreClasePojo(configuracionPantallaTransaccional.get(0).getNTabla(), propiedades.getProperty("paquetePojos"));
+                    System.out.println("entro en transaccional diferente");
+                	String nombreClase = Configuracion.buscaNombreClasePojo(configuracionPantallaTransaccional.get(0).getNTabla(), propiedades.getProperty("paquetePojos"));
                     if (nombreClase != null) {
                         try {
                             claseElementoTransaccional = Class.forName(nombreClase);
@@ -227,10 +233,10 @@ public class GenericTablaBean implements Serializable {
         elementoSeleccionado = null;
         idElementoSeleccionado = null;
         frmBean.setIdElemento(null);
-        frmBean.setClaseElemento(claseElemento);
-        frmBean.setClaseElementoDAO(claseElementoDAO);
-        frmBean.setIdTablaElemento(idTablaEntidad);
-        frmBean.setConfiguracionElemento(configuracionPantalla);
+        frmBean.setClaseElemento(claseElementoTransaccional);
+        frmBean.setClaseElementoDAO(claseElementoTransaccionalDAO);
+        frmBean.setIdTablaElemento(idTablaEntidadTransaccional);
+        frmBean.setConfiguracionElemento(configuracionPantallaTransaccional);
         frmBean.setPermissionToWrite(true);
         frmBean.setMenuOrigen(menuOrigen);
         frmBean.init();
@@ -380,7 +386,7 @@ public class GenericTablaBean implements Serializable {
         Properties propiedades;
         if (elementoSeleccionado != null) {
             try {
-                Class claseDAO;
+                Class<?> claseDAO;
                 try {
                     propiedades = Propiedades.obtienePropiedades();
                     if (propiedades.containsKey("paqueteDAO")) {

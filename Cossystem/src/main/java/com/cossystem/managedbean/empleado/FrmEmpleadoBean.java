@@ -34,7 +34,12 @@ import org.primefaces.event.FileUploadEvent;
 @ViewScoped
 public class FrmEmpleadoBean extends FrmGenericElementoBean implements Serializable {
 
-    @ManagedProperty(value = "#{principalBean}")
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@ManagedProperty(value = "#{principalBean}")
     private PrincipalBean principalBean;
 
     private TblEmpleados empleado;

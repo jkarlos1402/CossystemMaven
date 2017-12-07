@@ -26,7 +26,12 @@ import org.primefaces.context.RequestContext;
 @ViewScoped
 public class RutaPaginaBean implements Serializable {
 
-    private String rutaPagina = "/blank.xhtml";
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private String rutaPagina = "/blank.xhtml";
 
     /**
      * Creates a new instance of PrincipalBean
